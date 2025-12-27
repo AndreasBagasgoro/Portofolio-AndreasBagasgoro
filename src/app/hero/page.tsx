@@ -1,16 +1,72 @@
+"use client";
+
 import { Badge } from "@/src/components/ui/badge";
 import ColorBends from "@/src/components/ui/color-bends";
 import { FaCode } from "react-icons/fa";
 import { Button } from "@/src/components/ui/button";
 import { FiArrowUpRight } from "react-icons/fi";
 import { RiMailSendLine } from "react-icons/ri";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
+    const heroRef = useRef<HTMLDivElement>(null);
+    const dotRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!heroRef.current || !dotRef.current || !contentRef.current) return;
+
+        // Timeline untuk mengatur urutan animasi
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: heroRef.current,
+                start: "top top",
+                end: "+=200%", // Perpanjang durasi scroll untuk delay
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+            }
+        });
+
+        // 1. Fade out konten hero (0-30%)
+        tl.to(heroRef.current.children, {
+            opacity: 0,
+            y: -50,
+            duration: 0.3,
+            stagger: 0.05,
+        }, 0)
+        
+        // Fade out grid content secara explicit
+        .to(contentRef.current, {
+            opacity: 0,
+            y: -50,
+            duration: 0.5,
+        }, 0)
+        
+        // 2. Zoom dot menjadi full screen (0-70%)
+        .to(dotRef.current, {
+            scale: 200,
+            duration: 0.7,
+            ease: "power2.inOut",
+        }, 0)
+        
+        // 3. Fade out dot setelah scale selesai (70-100%)
+        .to(dotRef.current, {
+            opacity: 0,
+            duration: 0.7,
+            ease: "power2.inOut",
+        }, 0.7);
+
+    }, []);
+
     return (
-        <div className="relative w-full h-screen flex flex-col space-y-8 items-start justify-start overflow-hidden py-32 px-32">
+        <div ref={heroRef} className="relative w-full h-screen flex flex-col space-y-8 items-start justify-start overflow-hidden py-32 px-32">
             
-            <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+            <div className="absolute inset-0 z-0 opacity-40">
               <ColorBends
                 colors={["14b8a6"]}
                 rotation={45}
@@ -40,11 +96,11 @@ const HeroSection = () => {
                     ANDREAS <br />
                     <span className="flex items-center">
                         BAGASGORO
-                        <div className="h-8 w-8 rounded-4xl bg-primary ml-4"></div>
+                        <div ref={dotRef} className="relative h-8 w-8 rounded-4xl bg-primary ml-4 z-[9999]"></div>
                     </span>
                 </h1>
             </div>
-            <div className="grid grid-cols-2 gap-8">
+            <div ref={contentRef} className="grid grid-cols-2 gap-8">
                 <div className="grid col-span-1"></div>
                 <div className="grid col-span-1 space-y-4">
                     <h1 className="text-4xl font-bold">Building digital interfaces where precise code meets meaningful user experiences.</h1>

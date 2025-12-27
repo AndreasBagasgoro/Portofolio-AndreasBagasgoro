@@ -1,9 +1,9 @@
-import Image from "next/image";
+import HeroSection from './hero/page';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <h1>TES</h1>
+    <div className="flex min-h-screen items-center justify-center text-foreground bg-background font-sans">
+        <HeroSection />
     </div>
   );
 }

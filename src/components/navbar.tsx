@@ -3,32 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { FiDownload, FiSun, FiMoon } from "react-icons/fi";
-import { ToggleGroup } from "./ui/toggle-group";
-import { useState, useEffect } from "react";
+import { FiDownload } from "react-icons/fi";
 
 const Navbar = () => {
-    const [theme, setTheme] = useState('dark');
-
-    useEffect(() => {
-        const isDark = document.documentElement.classList.contains('dark');
-        setTheme(isDark ? 'dark' : 'light');
-    }, []);
-
-    const toggleTheme = (value: string) => {
-        setTheme(value);
-        if (value === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    };
-
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent text-foreground">
             <div className="flex items-center justify-between py-4 px-32 mx-auto">
                 <div className="flex flex-row items-center space-x-4 text-xl font-bold">
-                    <Image src=""/>
+                    <Image src="/next.svg" alt="Next.js Logo" width={40} height={40} />
                     <h1>
                         Andreas Bagasgoro
                     </h1>
@@ -44,14 +26,6 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center space-x-8">
                     <Button className="shadow-elegant font-semibold" size="default">Resume <FiDownload /></Button>
-                    <ToggleGroup
-                        options={[
-                            { value: 'light', label: '', icon: <FiSun /> },
-                            { value: 'dark', label: '', icon: <FiMoon /> }
-                        ]}
-                        value={theme}
-                        onChange={toggleTheme}
-                    />
                 </div>
             </div>
         </nav>

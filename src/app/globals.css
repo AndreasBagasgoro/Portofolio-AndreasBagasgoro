@@ -3,27 +3,6 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #0d121b;
-
-    --primary: #14b8a6;
-    --primary-hover: #0d9488;
-    --primary-border: #0f766e;
-    --primary-deep: #115e59;
-    --primary-card: #ccfbf1;
-
-    --border: #e5e7eb;
-
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-elegant: 0 10px 30px -10px hsl(210 65% 10% / 0.1);
-    --shadow-glass: 0 8px 32px 0 hsl(210 65% 10% / 0.1);
-    --shadow-drop: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-
-    --glass-bg: #ffffff;
-    --glass-border: #d9e0e8;
-  }
-  
-  .dark {
     --background: #0a0a0a;
     --foreground: #ededed;
 
@@ -40,8 +19,8 @@
     --shadow-glass: 0 8px 32px 0 hsl(210 65% 10% / 0.1);
     --shadow-drop: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
 
-    --glass-bg: #ffffff;
-    --glass-border: #d9e0e8;
+    --glass-bg: #1a1a1a; /* Dark glass background */
+    --glass-border: #374151;
   }
 
 }
@@ -64,13 +43,7 @@
   --color-glass-border: var(--glass-border);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
+/* Removed light/dark mode media queries */
 
 body {
   background: var(--background);

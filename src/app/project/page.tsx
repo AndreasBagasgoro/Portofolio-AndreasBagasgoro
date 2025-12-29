@@ -46,13 +46,13 @@ const ProjectSection = () => {
       problem:
         'Managing numerous competition registrants across diverse cultural events presented significant challenges. The absence of an integrated system made registration tracking and event coordination difficult and inefficient.',
       solution:
-        'Developed an integrated website serving as a comprehensive information hub for competitions, featuring digital management tools for registration handling, streamlining processes and enhancing monitoring capabilities.',
+        'Developed an integrated website using Inertia.js serving as a comprehensive information hub for competitions, featuring digital management tools for registration handling, streamlining processes and enhancing monitoring capabilities.',
       preview: '',
       impact:
         'Project is currently in development, impact metrics will be available post-launch.',
       tech: [
         'React',
-        'Next.js',
+        'Inertia.js',
         'Tailwind CSS',
         'TypeScript',
         'Axios',
@@ -89,8 +89,8 @@ const ProjectSection = () => {
     <div className="flex w-screen h-full items-center justify-center bg-background rounded-2xl text-foreground px-32">
       {/* --- DIV KE-2 (Target Modifikasi) --- */}
 
-      <div className="flex flex-col w-full h-full items-center justify-start rounded-[50px] text-foreground bg-[radial-gradient(ellipse_200%_110%_at_bottom,#0a0a0a_0%,#0a0a0a_60%,#0d3d38_70%,#0f766e_79%,#14b8a6_87%,#d4faf2_100%)] pb-16 pt-64 px-16 space-y-32">
-        <h1 className="text-6xl">
+      <div className="flex flex-col w-full h-full items-center justify-start rounded-[50px] text-foreground bg-[radial-gradient(ellipse_240rem_135rem_at_bottom,#0a0a0a_0%,#0a0a0a_60%,#0d3d38_70%,#0f766e_79%,#14b8a6_87%,#d4faf2_100%)] pb-16 pt-64 px-16 space-y-32">
+        <h1 className="text-7xl">
           Featured project<span className="text-primary">.</span>
         </h1>
         <div className="flex flex-col gap-16 w-full">

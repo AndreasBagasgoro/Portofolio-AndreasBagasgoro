@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const AboutSection = () => {
     return (
-        <div className="w-full h-auto flex flex-col space-y-32 px-32 py-16">
+        <div className="w-full h-auto flex flex-col space-y-32 px-32">
             <div>
                 <h1 className="text-9xl font-bold">Curious<span className="text-primary">.</span></h1>
                 <h1 className="text-9xl font-bold text-center">Committed<span className="text-primary">.</span></h1>

@@ -36,7 +36,7 @@ const HeroSection = () => {
         tl.to(heroRef.current.children, {
             opacity: 0,
             y: -50,
-            duration: 0.3,
+            duration: 0.5,
             stagger: 0.05,
         }, 0)
         
@@ -44,7 +44,7 @@ const HeroSection = () => {
         .to(contentRef.current, {
             opacity: 0,
             y: -50,
-            duration: 0.5,
+            duration: 0.7,
         }, 0)
         
         // 2. Zoom dot menjadi full screen (0-70%)

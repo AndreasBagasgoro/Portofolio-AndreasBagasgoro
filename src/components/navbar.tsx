@@ -6,6 +6,14 @@ import { Button } from "./ui/button";
 import { FiDownload } from "react-icons/fi";
 
 const Navbar = () => {
+    const navItems = [
+        { href: "/", label: "Home" },
+        { href: "/about", label: "About" },
+        { href: "/skills", label: "Skills" },
+        { href: "/project", label: "Projects" },
+        { href: "/contact", label: "Contact" },
+    ];
+
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent text-foreground">
             <div className="flex items-center justify-between py-4 px-32 mx-auto">
@@ -15,13 +23,15 @@ const Navbar = () => {
                         Andreas Bagasgoro
                     </h1>
                 </div>
-                <div className="flex font-medium bg-glass-bg/10 border border-glass-border/40 rounded-3xl py-2 px-6 space-x-8">
+                <div className="flex font-medium bg-glass-bg/70 border border-glass-border/40 rounded-3xl py-2 px-6 space-x-8">
                     <ul className="flex space-x-8">
-                        <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-                        <li><Link href="/about" className="hover:text-primary transition-colors">About</Link></li>
-                        <li><Link href="/skills" className="hover:text-primary transition-colors">Skills</Link></li>
-                        <li><Link href="/project" className="hover:text-primary transition-colors">Projects</Link></li>
-                        <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+                        {navItems.map((item) => (
+                            <li key={item.href}>
+                                <Link href={item.href} className="hover:text-primary transition-colors">
+                                    {item.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="flex items-center space-x-8">

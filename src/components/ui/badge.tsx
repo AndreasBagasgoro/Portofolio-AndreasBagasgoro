@@ -1,4 +1,4 @@
-import { cn } from "../../utils/utils";
+import { cn } from '../../utils/utils';
 
 interface JenisBadgeProps {
   children?: React.ReactNode;
@@ -9,24 +9,21 @@ interface JenisBadgeProps {
 
 export function Badge({
   children,
-  text = "",
+  text = '',
   className,
   showPulse,
 }: JenisBadgeProps) {
-
   return (
-    <div
+    <span
       className={cn(
-        "inline-flex items-center gap-2 px-3 py-1 rounded-lg text-xs font-medium border",
+        'inline-flex items-center gap-2 px-3 py-1 rounded-lg text-xs font-medium border',
         className
       )}
     >
       {showPulse && (
-        <span
-          className="h-2 w-2 rounded-full animate-pulse-glow"
-        />
+        <span className="h-2 w-2 rounded-full animate-pulse-glow" />
       )}
       {text || children}
-    </div>
+    </span>
   );
 }

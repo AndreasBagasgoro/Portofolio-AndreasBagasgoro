@@ -7,11 +7,21 @@ import SkillsPage from './skills/page';
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-center text-foreground bg-background font-sans space-y-32">
-      <HeroSection />
-      <AboutSection />
-      <SkillsPage />
-      <ProjectSection />
-      <ContactSection />
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="about">
+        <AboutSection />
+      </section>
+      <section id="skills">
+        <SkillsPage />
+      </section>
+      <section id="project">
+        <ProjectSection />
+      </section>
+      <section id="contact">
+        <ContactSection />
+      </section>
     </main>
   );
 }

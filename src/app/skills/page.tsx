@@ -34,7 +34,7 @@ const skillsData: SkillsPageProps = {
 const SkillsPage = () => {
   return (
     <div className="flex w-screen h-full items-center justify-center bg-background rounded-2xl text-foreground px-32">
-      <div className="flex flex-col w-full h-full items-center justify-start rounded-[50px] text-foreground bg-[radial-gradient(ellipse_200rem_90rem_at_bottom,#0a0a0a_0%,#0a0a0a_60%,#0d3d38_70%,#0f766e_79%,#14b8a6_87%,#d4faf2_100%)] pb-16 pt-64 px-16 space-y-32">
+      <div className="flex flex-col w-full h-full items-center justify-start rounded-[50px] text-foreground bg-[radial-gradient(ellipse_200rem_90rem_at_bottom,#0a0a0a_0%,#0a0a0a_60%,#0d3d38_70%,#0f766e_79%,#14b8a6_87%,#d4faf2_100%)] pb-16 pt-64 px-16 space-y-16">
         <div className="w-full h-auto grid grid-cols-2 gap-4">
           <Card className="bg-transparent border-none">
             <CardHeader>

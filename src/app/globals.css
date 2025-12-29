@@ -1,7 +1,9 @@
-@import "tailwindcss";
-
+@import 'tailwindcss';
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -13,7 +15,7 @@
     --primary-card: #ccfbf1;
 
     --border: #374151;
-    
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow-elegant: 0 10px 30px -10px hsl(210 65% 10% / 0.1);
     --shadow-glass: 0 8px 32px 0 hsl(210 65% 10% / 0.1);
@@ -22,7 +24,6 @@
     --glass-bg: #1a1a1a; /* Dark glass background */
     --glass-border: #374151;
   }
-
 }
 
 @theme inline {

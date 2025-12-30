@@ -78,6 +78,13 @@ const HeroSection = () => {
       );
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div
       ref={heroRef}
@@ -140,12 +147,19 @@ const HeroSection = () => {
             interactions that feel alive.
           </h2>
           <div className="space-x-4">
-            <Button className="shadow-elegant">
+            <Button
+              className="shadow-elegant"
+              onClick={() => scrollToSection('project')}
+            >
               Explore Work
               <FiArrowUpRight />
             </Button>
-            <Button size="default" variant="outline">
-              Explore Work <RiMailSendLine />
+            <Button
+              size="default"
+              variant="outline"
+              onClick={() => scrollToSection('contact')}
+            >
+              Get In Touch <RiMailSendLine />
             </Button>
           </div>
         </div>

@@ -65,21 +65,24 @@ const AboutSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full h-auto flex flex-col space-y-32 px-32"
+      className="w-full h-auto flex flex-col space-y-8 md:space-y-16 lg:space-y-24 xl:space-y-32 px-4 md:px-8 lg:px-16 xl:px-32"
     >
       <div ref={headingRef}>
-        <h1 className="text-9xl font-bold">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-bold">
           Curious<span className="text-primary">.</span>
         </h1>
-        <h1 className="text-9xl font-bold text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-bold text-center">
           Committed<span className="text-primary">.</span>
         </h1>
-        <h1 className="text-9xl font-bold text-end">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-bold text-end">
           Capable<span className="text-primary">.</span>
         </h1>
       </div>
-      <div ref={gridRef} className="grid grid-cols-5 gap-16 flex-1 items-start">
-        <div className="grid col-span-2 space-y-4">
+      <div
+        ref={gridRef}
+        className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16 flex-1 items-start"
+      >
+        <div className="grid lg:col-span-2 space-y-4">
           <ElectricBorder
             color="#14b8a6"
             speed={1}
@@ -88,7 +91,7 @@ const AboutSection = () => {
           >
             <Card
               ref={cardRef}
-              className="h-176 bg-transparent border-primary border-2 overflow-hidden"
+              className="h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] bg-transparent border-primary border-2 overflow-hidden"
             >
               <CardHeader className="relative w-full h-full p-0">
                 <Image
@@ -102,7 +105,7 @@ const AboutSection = () => {
           </ElectricBorder>
           <div
             ref={iconsRef}
-            className="flex flex-row space-x-8 justify-center"
+            className="flex flex-row space-x-4 sm:space-x-6 md:space-x-8 justify-center"
           >
             <a
               href="https://github.com/AndreasBagasgoro"
@@ -110,7 +113,7 @@ const AboutSection = () => {
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
             >
-              <FaGithub size={48} />
+              <FaGithub className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
             </a>
             <a
               href="https://www.linkedin.com/in/andreas-bagasgoro/"
@@ -118,7 +121,7 @@ const AboutSection = () => {
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
             >
-              <FaLinkedin size={48} />
+              <FaLinkedin className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
             </a>
             <a
               href="http://instagram.com/andreasbagasgoro/"
@@ -126,24 +129,27 @@ const AboutSection = () => {
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
             >
-              <FaInstagram size={48} />
+              <FaInstagram className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
             </a>
             <a
               href="mailto:andreasbagasgoro04@gmail.com?subject=Halo&body=Saya tertarik dengan portofolio Anda"
               className="text-foreground hover:text-primary transition-colors"
             >
-              <FaEnvelope size={48} />
+              <FaEnvelope className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
             </a>
           </div>
         </div>
-        <div ref={textRef} className="grid col-span-3 space-y-12 justify-start">
+        <div
+          ref={textRef}
+          className="grid lg:col-span-3 space-y-6 md:space-y-8 lg:space-y-12 justify-start"
+        >
           {/* <h1 className="text-5xl text-primary font-bold">
             Transforming complex logic into elegant, high-performance
             interfaces.
           </h1> */}
           <Shuffle
             text="Transforming complex logic into elegant, high-performance interfaces."
-            className="text-5xl text-primary font-bold lead tracking-tight normal-case"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary font-bold lead tracking-tight normal-case"
             textAlign="left"
             shuffleDirection="right"
             duration={0.35}
@@ -156,21 +162,21 @@ const AboutSection = () => {
             triggerOnHover={true}
             respectReducedMotion={true}
           />
-          <h2 className="text-3xl text-justify">
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-justify">
             I am a Frontend Engineer dedicated to building scalable web
             applications that don't just work—they feel seamless. My approach
             combines clean architecture with a deep focus on user-centric
             design, ensuring every interaction is purposeful and every line of
             code is optimized.
           </h2>
-          <Card className="bg-transparent shadow-none border-l-primary border-l-8 rounded-3xl">
+          <Card className="bg-transparent shadow-none border-l-primary border-l-4 md:border-l-8 rounded-2xl md:rounded-3xl">
             <CardHeader>
-              <CardTitle className="!text-4xl font-bold tracking-wider">
+              <CardTitle className="!text-xl sm:!text-2xl md:!text-3xl lg:!text-4xl font-bold tracking-wider">
                 Learning Philosophy.
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="!text-2xl text-justify tracking-wider">
+              <CardDescription className="!text-sm sm:!text-base md:!text-lg lg:!text-xl xl:!text-2xl text-justify tracking-wider">
                 I treat learning as an endless loop of curiosity and
                 implementation. I don't just follow trends; I evaluate them
                 based on performance and user needs. To me, being a developer

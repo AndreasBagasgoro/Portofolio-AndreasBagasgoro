@@ -92,7 +92,7 @@ const HeroSection = () => {
     >
       <div className="absolute inset-0 z-0 opacity-40">
         <ColorBends
-          colors={['14b8a6']}
+          colors={['#14b8a6']}
           rotation={45}
           speed={0.3}
           scale={1.2}

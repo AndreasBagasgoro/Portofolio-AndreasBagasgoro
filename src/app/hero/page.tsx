@@ -88,7 +88,7 @@ const HeroSection = () => {
   return (
     <div
       ref={heroRef}
-      className="relative w-full h-screen flex flex-col space-y-8 items-start justify-start overflow-hidden pt-32 px-32"
+      className="relative w-full min-h-screen flex flex-col space-y-6 md:space-y-8 items-start justify-start overflow-hidden pt-20 md:pt-32 px-4 md:px-8 lg:px-32"
     >
       <div className="absolute inset-0 z-0 opacity-40">
         <ColorBends
@@ -106,38 +106,41 @@ const HeroSection = () => {
       </div>
 
       {/* Konten hero di atas background */}
-      <div className="relative flex flex-row space-x-2 text-center items-center text-foreground/50">
+      <div className="relative flex flex-row space-x-2 text-center items-center text-foreground/50 pt-4 md:pt-0">
         <div className="h-4 w-4 rounded-4xl bg-primary"></div>
-        <h2>AVAILABLE FOR NEW PROJECT</h2>
+        <h2 className="text-sm md:text-base">AVAILABLE FOR NEW PROJECT</h2>
       </div>
       <div>
         <Badge
           showPulse
-          className="flex justify-center items-center text-center text-xl z-50  bg-primary/50 border border-primary px-4 py-2"
+          className="flex justify-center items-center text-center text-lg md:text-xl z-50 bg-primary/50 border border-primary px-4 py-2"
         >
           <FaCode /> Software Enthusiast
         </Badge>
       </div>
       <div className="flex flex-row">
-        <h1 className="text-9xl font-bold">
+        <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold">
           ANDREAS <br />
           <span className="flex items-center">
             BAGASGORO
             <div
               ref={dotRef}
-              className="relative h-8 w-8 rounded-4xl bg-primary ml-4 z-[9999]"
+              className="relative h-4 w-4 md:h-6 md:w-6 lg:h-8 lg:w-8 rounded-4xl bg-primary ml-2 md:ml-4 z-[9999]"
             ></div>
           </span>
         </h1>
       </div>
-      <div ref={contentRef} className="grid grid-cols-2 gap-8">
-        <div className="grid col-span-1"></div>
-        <div className="grid col-span-1 space-y-4">
-          <h1 className="text-4xl font-bold">
+      <div
+        ref={contentRef}
+        className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-8"
+      >
+        <div className="hidden md:block"></div>
+        <div className="space-y-4">
+          <h1 className="text-xl md:text-3xl lg:text-4xl font-bold">
             Building digital interfaces where precise code meets meaningful user
             experiences.
           </h1>
-          <h2 className="text-xl">
+          <h2 className="text-base md:text-xl">
             Currently focused on developing high-performance, responsive web
             apps. I specialize in{' '}
             <span className="font-semibold text-primary">
@@ -146,7 +149,7 @@ const HeroSection = () => {
             with a passion for micro-animations, accessibility, and creating
             interactions that feel alive.
           </h2>
-          <div className="space-x-4">
+          <div className="flex flex-col space-y-2 md:flex-row md:space-x-4 md:space-y-0">
             <Button
               className="shadow-elegant"
               onClick={() => scrollToSection('project')}

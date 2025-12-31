@@ -101,9 +101,9 @@ const Navbar = () => {
         </div>
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-glass-border/40">
+          <div className="md:hidden bg-background/50 backdrop-blur-md border-t border-glass-border/40">
             <div className="px-4 py-4 space-y-4">
-              <ul className="space-y-4">
+              <ul className="space-y-4 justify-center items-center text-center">
                 {navItems.map(item => (
                   <li key={item.href}>
                     <Link

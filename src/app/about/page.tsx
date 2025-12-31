@@ -164,10 +164,10 @@ const AboutSection = () => {
           />
           <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-justify">
             I am a Frontend Engineer dedicated to building scalable web
-            applications that don't just work—they feel seamless. My approach
-            combines clean architecture with a deep focus on user-centric
-            design, ensuring every interaction is purposeful and every line of
-            code is optimized.
+            applications that don&apos;t just work—they feel seamless. My
+            approach combines clean architecture with a deep focus on
+            user-centric design, ensuring every interaction is purposeful and
+            every line of code is optimized.
           </h2>
           <Card className="bg-transparent shadow-none border-l-primary border-l-4 md:border-l-8 rounded-2xl md:rounded-3xl">
             <CardHeader>
@@ -178,10 +178,10 @@ const AboutSection = () => {
             <CardContent>
               <CardDescription className="!text-sm sm:!text-base md:!text-lg lg:!text-xl xl:!text-2xl text-justify tracking-wider">
                 I treat learning as an endless loop of curiosity and
-                implementation. I don't just follow trends; I evaluate them
+                implementation. I don&apos;t just follow trends; I evaluate them
                 based on performance and user needs. To me, being a developer
                 means being a lifelong student who is never afraid to start from
-                "Hello World" to master something great.
+                &quot;Hello World&quot; to master something great.
               </CardDescription>
             </CardContent>
           </Card>

@@ -89,8 +89,8 @@ const ProjectSection = () => {
     <div className="flex w-screen h-full items-center justify-center bg-background rounded-2xl text-foreground px-4 md:px-8 lg:px-16 xl:px-32">
       {/* --- DIV KE-2 (Target Modifikasi) --- */}
 
-      <div className="flex flex-col w-full h-full items-center justify-start rounded-3xl md:rounded-[50px] text-foreground bg-[radial-gradient(ellipse_240rem_135rem_at_bottom,#0a0a0a_0%,#0a0a0a_60%,#0d3d38_70%,#0f766e_79%,#14b8a6_87%,#d4faf2_100%)] pb-8 md:pb-12 lg:pb-16 pt-16 sm:pt-24 md:pt-32 lg:pt-48 xl:pt-64 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 space-y-12 md:space-y-20 lg:space-y-32">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center md:text-left">
+      <div className="flex flex-col w-full h-full items-center justify-start rounded-3xl md:rounded-[50px] text-foreground bg-[radial-gradient(ellipse_180rem_210rem_at_bottom,#0a0a0a_0%,#0a0a0a_60%,#0d3d38_70%,#0f766e_79%,#14b8a6_87%,#d4faf2_100%)] md:bg-[radial-gradient(ellipse_240rem_150rem_at_bottom,#0a0a0a_0%,#0a0a0a_60%,#0d3d38_70%,#0f766e_79%,#14b8a6_87%,#d4faf2_100%)]  pb-8 md:pb-12 lg:pb-16 pt-16 sm:pt-24 md:pt-32 lg:pt-48 xl:pt-64 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 space-y-12 md:space-y-20 lg:space-y-32">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center md:text-left font-bold">
           Featured project<span className="text-primary">.</span>
         </h1>
         <div className="flex flex-col gap-8 md:gap-12 lg:gap-16 w-full">

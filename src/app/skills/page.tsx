@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/src/components/ui/card';
+import { Tooltip } from '@/src/components/ui/tooltip';
 import Image from 'next/image';
 interface SkillsPageProps {
   tech: { name: string; id: string; class?: string }[];
@@ -62,19 +63,18 @@ const SkillsPage = () => {
             <CardHeader>
               <div className="flex flex-row flex-wrap gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center rounded-l p-2 md:p-4">
                 {skillsData.tech.map((tech, idx) => (
-                  <div
-                    key={idx}
-                    className="h-20 sm:h-24 md:h-28 lg:h-32 xl:h-36 flex items-center bg-primary p-2 sm:p-2.5 md:p-3 rounded-lg"
-                  >
-                    <Image
-                      src={`/tech/${tech.id}.webp`}
-                      alt={tech.name}
-                      width={0}
-                      height={0}
-                      sizes="140px"
-                      className="h-full w-auto object-contain rounded-lg"
-                    />
-                  </div>
+                  <Tooltip key={idx} content={tech.name} position="top">
+                    <div className="h-20 sm:h-24 md:h-28 lg:h-32 xl:h-36 flex items-center bg-primary p-2 sm:p-2.5 md:p-3 rounded-lg hover:scale-105 transition-transform duration-200 pointer-none">
+                      <Image
+                        src={`/tech/${tech.id}.webp`}
+                        alt={tech.name}
+                        width={0}
+                        height={0}
+                        sizes="140px"
+                        className="h-full w-auto object-contain rounded-lg"
+                      />
+                    </div>
+                  </Tooltip>
                 ))}
               </div>
             </CardHeader>

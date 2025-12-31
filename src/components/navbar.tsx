@@ -20,8 +20,8 @@ const Navbar = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Andreas_Bagasgoro_CV.pdf';
-    link.download = 'Andreas_Bagasgoro_CV.pdf';
+    link.href = '/cv-andreas-bagasgoro.pdf';
+    link.download = 'cv-andreas-bagasgoro.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

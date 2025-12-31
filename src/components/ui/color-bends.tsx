@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 6;
 interface ColorBendsProps {
@@ -137,6 +137,8 @@ export default function ColorBends({
   const pointerTargetRef = useRef(new THREE.Vector2(0, 0));
   const pointerCurrentRef = useRef(new THREE.Vector2(0, 0));
   const pointerSmoothRef = useRef(8);
+
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -333,11 +335,24 @@ export default function ColorBends({
     };
   }, []);
 
+  // Fade-in animation effect
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpacity(1);
+    }, 100); // Small delay to ensure component is mounted
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       ref={containerRef}
       className={`w-full h-full relative overflow-hidden ${className}`}
-      style={style}
+      style={{
+        ...style,
+        opacity,
+        transition: 'opacity 1.5s ease-in-out',
+      }}
     />
   );
 }

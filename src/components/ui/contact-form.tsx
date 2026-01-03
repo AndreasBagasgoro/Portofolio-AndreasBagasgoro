@@ -38,7 +38,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
           type="text"
           placeholder="Your full name"
           required
-          className="bg-background/50 border-border/50 focus:border-primary"
+          className="bg-background/50 border-border/50 focus:border-primary focus-visible:ring-0 focus-visible:ring-offset-0"
         />
         <ValidationError prefix="Name" field="name" errors={state.errors} />
       </div>
@@ -53,7 +53,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
           type="email"
           placeholder="your.email@example.com"
           required
-          className="bg-background/50 border-border/50 focus:border-primary"
+          className="bg-background/50 border-border/50 focus:border-primary focus-visible:ring-0 focus-visible:ring-offset-0"
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
@@ -70,7 +70,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
           name="subject"
           type="text"
           placeholder="What's this about?"
-          className="bg-background/50 border-border/50 focus:border-primary"
+          className="bg-background/50 border-border/50 focus:border-primary focus-visible:ring-0 focus-visible:ring-offset-0"
         />
         <ValidationError
           prefix="Subject"
@@ -92,7 +92,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
           placeholder="Tell me about your project or just say hello..."
           required
           rows={6}
-          className="bg-background/50 border-border/50 focus:border-primary resize-none"
+          className="bg-background/50 border-border/50 focus:border-primary focus-visible:ring-0 focus-visible:ring-offset-0 resize-none"
         />
         <ValidationError
           prefix="Message"

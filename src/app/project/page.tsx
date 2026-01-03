@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/src/components/ui/card';
+import TiltedCard from '@/src/components/ui/tilted-card';
 
 const ProjectSection = () => {
   interface Project {
@@ -17,6 +18,7 @@ const ProjectSection = () => {
     preview: string;
     impact: string;
     tech: string[];
+    image: string;
   }
   const projectData: Project[] = [
     {
@@ -38,6 +40,7 @@ const ProjectSection = () => {
         'Axios',
         'Framer Motion',
       ],
+      image: '/project/brian.png',
     },
     {
       projectName: 'Kampung Budaya UB 2025',
@@ -58,6 +61,7 @@ const ProjectSection = () => {
         'Axios',
         'Framer Motion',
       ],
+      image: '/project/kbub.png',
     },
     {
       projectName: 'Ikatan Pelajar & Mahasiswa (Ikapema) Kepulauan Riau—Malang',
@@ -83,6 +87,7 @@ const ProjectSection = () => {
         'Axios',
         'Figma',
       ],
+      image: '/project/ikapema.png',
     },
   ];
   return (
@@ -99,149 +104,62 @@ const ProjectSection = () => {
               key={index}
               className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-4 w-full"
             >
-              {index % 2 === 0 ? (
-                <>
-                  <Card className="flex flex-col w-full h-full bg-transparent border-none">
-                    <CardHeader>
-                      <div className="flex flex-wrap gap-2">
-                        <Badge className="bg-primary/20 border-primary text-primary text-xs sm:text-sm">
-                          {project.role}
-                        </Badge>
-                        <Badge className="bg-border/20 border-border text-foreground text-xs sm:text-sm">
-                          {project.year}
-                        </Badge>
-                      </div>
-                      <CardTitle className="!text-2xl sm:!text-3xl md:!text-3xl lg:!text-4xl mt-4">
-                        {project.projectName}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4 md:space-y-6">
-                      <CardDescription className="text-base sm:text-lg md:text-xl font-semibold text-justify">
-                        <span className="text-primary">The Problem:</span>
-                        <span className="text-muted-foreground font-normal text-sm sm:text-base leading-relaxed ml-2">
-                          {project.problem}
-                        </span>
-                      </CardDescription>
-                      <CardDescription className="text-base sm:text-lg md:text-xl font-semibold text-justify">
-                        <span className="text-primary">The Solution:</span>
-                        <span className="text-muted-foreground font-normal text-sm sm:text-base leading-relaxed ml-2">
-                          {project.solution}
-                        </span>
-                      </CardDescription>
-                      <CardDescription className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, idx) => (
-                          <Badge key={idx} className="text-xs sm:text-sm">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                  <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-xl md:rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center space-y-2 sm:space-y-4 px-4">
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
-                          <svg
-                            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                            />
-                          </svg>
-                        </div>
-                        <div className="space-y-1 sm:space-y-2">
-                          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-primary">
-                            Project Preview
-                          </h3>
-                          <p className="text-xs sm:text-sm text-muted-foreground max-w-xs">
-                            Interactive preview of the {project.projectName}{' '}
-                            application interface
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Placeholder for actual image - replace with: */}
-                    {/* <img src={project.preview} alt={`${project.projectName} Project Preview`} className="w-full h-full object-cover" /> */}
+              <Card
+                className={`flex flex-col w-full h-full bg-transparent border-none order-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}
+              >
+                <CardHeader>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-primary/20 border-primary text-primary text-xs sm:text-sm">
+                      {project.role}
+                    </Badge>
+                    <Badge className="bg-border/20 border-border text-foreground text-xs sm:text-sm">
+                      {project.year}
+                    </Badge>
                   </div>
-                </>
-              ) : (
-                <>
-                  <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-xl md:rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 order-2 lg:order-first">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center space-y-2 sm:space-y-4 px-4">
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
-                          <svg
-                            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                            />
-                          </svg>
-                        </div>
-                        <div className="space-y-1 sm:space-y-2">
-                          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-primary">
-                            Project Preview
-                          </h3>
-                          <p className="text-xs sm:text-sm text-muted-foreground max-w-xs">
-                            Interactive preview of the {project.projectName}{' '}
-                            application interface
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Placeholder for actual image - replace with: */}
-                    {/* <img src={project.preview} alt={`${project.projectName} Project Preview`} className="w-full h-full object-cover" /> */}
-                  </div>
-                  <Card className="flex flex-col w-full h-full bg-transparent border-none">
-                    <CardHeader>
-                      <div className="flex flex-wrap gap-2">
-                        <Badge className="bg-primary/20 border-primary text-primary text-xs sm:text-sm">
-                          {project.role}
-                        </Badge>
-                        <Badge className="bg-border/20 border-border text-foreground text-xs sm:text-sm">
-                          {project.year}
-                        </Badge>
-                      </div>
-                      <CardTitle className="!text-2xl sm:!text-3xl md:!text-3xl lg:!text-4xl mt-4">
-                        {project.projectName}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4 md:space-y-6">
-                      <CardDescription className="text-base sm:text-lg md:text-xl font-semibold text-justify">
-                        <span className="text-primary">The Problem:</span>
-                        <span className="text-muted-foreground font-normal text-sm sm:text-base leading-relaxed ml-2">
-                          {project.problem}
-                        </span>
-                      </CardDescription>
-                      <CardDescription className="text-base sm:text-lg md:text-xl font-semibold text-justify">
-                        <span className="text-primary">The Solution:</span>
-                        <span className="text-muted-foreground font-normal text-sm sm:text-base leading-relaxed ml-2">
-                          {project.solution}
-                        </span>
-                      </CardDescription>
-                      <CardDescription className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, idx) => (
-                          <Badge key={idx} className="text-xs sm:text-sm">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                </>
-              )}
+                  <CardTitle className="!text-2xl sm:!text-3xl md:!text-3xl lg:!text-4xl mt-4">
+                    {project.projectName}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 md:space-y-6">
+                  <CardDescription className="text-base sm:text-lg md:text-xl font-semibold text-justify">
+                    <span className="text-primary">The Problem:</span>
+                    <span className="text-muted-foreground font-normal text-sm sm:text-base leading-relaxed ml-2">
+                      {project.problem}
+                    </span>
+                  </CardDescription>
+                  <CardDescription className="text-base sm:text-lg md:text-xl font-semibold text-justify">
+                    <span className="text-primary">The Solution:</span>
+                    <span className="text-muted-foreground font-normal text-sm sm:text-base leading-relaxed ml-2">
+                      {project.solution}
+                    </span>
+                  </CardDescription>
+                  <CardDescription className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, idx) => (
+                      <Badge key={idx} className="text-xs sm:text-sm">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+              <div
+                className={`order-2 h-[200px] sm:h-[300px] md:h-[350px] lg:h-[400px] ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
+              >
+                <TiltedCard
+                  imageSrc={project.image}
+                  altText={`${project.projectName} Project Preview`}
+                  captionText={`Preview of ${project.projectName}`}
+                  containerHeight="100%"
+                  containerWidth="100%"
+                  imageHeight="100%"
+                  imageWidth="100%"
+                  rotateAmplitude={12}
+                  scaleOnHover={1}
+                  showMobileWarning={false}
+                  showTooltip={true}
+                  displayOverlayContent={true}
+                />
+              </div>
             </div>
           ))}
         </div>

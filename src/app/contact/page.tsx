@@ -68,7 +68,7 @@ const ContactSection = () => {
               </a>
 
               <a
-                href="https://linkedin.com/in/andreasbagasgoro"
+                href="https://www.linkedin.com/in/andreas-bagasgoro/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors duration-200 group"
